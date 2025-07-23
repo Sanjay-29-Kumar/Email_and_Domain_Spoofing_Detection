@@ -1,67 +1,149 @@
-# Email Spoofing Detection Web Application
+# 📧 Email Spoofing Detection Web App
 
-This web application analyzes emails for potential spoofing by checking SPF and DMARC records, and other email authentication mechanisms.
+A secure Flask web application that detects potential email spoofing by analyzing Gmail messages using SPF, DKIM, and DMARC authentication protocols.
 
-## Setup Instructions
+---
 
-1. **Clone the Repository**
-   ```bash
-   git clone <repository-url>
-   cd email_spoofing_web
-   ```
+## 🚀 Features
 
-2. **Set Up Python Virtual Environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
+* ✅ **Email Authentication Check**: Verifies SPF, DKIM, and DMARC records
+* ⚠️ **Spoofing Alerts**: Flags suspicious messages and spoofed emails
+* 📬 **Email Viewer**: Displays full email content and headers
+* 🔐 **Secure OAuth Access**: Connects to Gmail API using Google OAuth 2.0
+* 💡 **Simple UI**: Clean and user-friendly interface for analysis
 
-3. **Google OAuth Setup**
-   1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-   2. Create a new project or select an existing one
-   3. Enable the Gmail API
-   4. Configure the OAuth consent screen
-   5. Create OAuth client ID credentials
-   6. Download the credentials and rename to `credentials.json`
-   7. Place `credentials.json` in the project root directory
+---
 
-4. **Run the Application**
-   ```bash
-   python app.py
-   ```
-   The application will be available at `http://localhost:5000`
+## 🛠️ Getting Started
 
-## Features
+### Prerequisites
 
-- Email authentication verification (SPF, DMARC)
-- Full email content display
-- Security warnings for potential spoofing attempts
-- Clean and intuitive user interface
+* Python 3.7 or higher
+* Gmail account with API access
+* Google Cloud Console access
 
-## Project Structure
+---
+
+### 🔧 Installation
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/email_spoofing_web.git
+cd email_spoofing_web
+```
+
+#### 2. Set Up Python Virtual Environment
+
+```bash
+python -m venv venv
+
+# Activate the environment
+# On macOS/Linux:
+source venv/bin/activate
+
+# On Windows:
+venv\Scripts\activate
+
+pip install -r requirements.txt
+```
+
+---
+
+### 🔐 Google OAuth Setup
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a project (or select an existing one)
+3. Enable **Gmail API**
+4. Configure the **OAuth consent screen**
+5. Create **OAuth 2.0 Client ID**
+6. Download the credentials file and rename it to `credentials.json`
+7. Place `credentials.json` in your project root (next to `app.py`)
+
+---
+
+### ▶️ Run the App
+
+```bash
+python app.py
+```
+
+Visit: [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 📁 Project Structure
+
 ```
 email_spoofing_web/
-├── app.py              # Main Flask application
-├── requirements.txt    # Python dependencies
-├── credentials.json    # Google OAuth credentials (you need to add this)
+├── app.py               # Flask application
+├── requirements.txt     # Python dependencies
+├── credentials.json     # Google OAuth credentials (DO NOT COMMIT)
 └── templates/
-    └── index.html     # Frontend template
+    └── index.html       # HTML frontend
 ```
 
-## Security Notes
+---
 
-- Keep your `credentials.json` file secure and never commit it to version control
-- The application requires access to Gmail API with readonly scope
-- All email analysis is done server-side for security
+## 🔒 Security Notes
 
-## Contributing
+* ❗ Do not expose `credentials.json` to version control (add it to `.gitignore`)
+* Gmail access is **read-only**
+* All analysis happens **server-side** to protect user data
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+---
 
-## License
+## 🤝 Contributing
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+1. Fork this repository
+2. Create a new branch: `git checkout -b feature-name`
+3. Commit your changes
+4. Push and open a pull request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for full details.
+
+---
+
+## 🙌 Acknowledgements
+
+* [Flask](https://flask.palletsprojects.com/)
+* [Google Gmail API](https://developers.google.com/gmail/api)
+* [SPF, DKIM, DMARC](https://dmarc.org/)
+* [dnspython](https://www.dnspython.org/)
+
+---
+
+## 🛡️ Example
+
+![App Screenshot](https://via.placeholder.com/800x400.png?text=Screenshot+of+Email+Analyzer)
+
+---
+
+## 📌 GitHub Tips
+
+### `.gitignore`
+
+```
+credentials.json
+__pycache__/
+venv/
+*.pyc
+```
+
+### Push to GitHub
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/your-username/email_spoofing_web.git
+git branch -M main
+git push -u origin main
+```
+
+---
